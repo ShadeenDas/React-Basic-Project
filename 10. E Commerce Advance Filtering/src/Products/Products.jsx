@@ -27,7 +27,7 @@ const Products = () => {
                 <div className="price">
                   <del>$300</del> 200
                 </div>
-                <div className="bag">
+                <div className="bag-icon">
                   <BsFillBagHeartFill />
                 </div>
               </section>

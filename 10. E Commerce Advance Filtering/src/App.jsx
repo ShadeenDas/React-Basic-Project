@@ -6,12 +6,11 @@ import Recommended from "./Recommended/Recommended";
 
 const App = () => {
   return (
-    <div>
-      App
+    <>
       <Navigation />
-      <Products />
       <Recommended />
-    </div>
+      <Products />
+    </>
   );
 };
 
