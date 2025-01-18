@@ -7,10 +7,14 @@ import Colors from "./Colors/Colors";
 const Sidebar = () => {
   return (
     <>
-      <div className="logo-container">
-        <h1></h1>
-      </div>
-      <Category />
+      <section className="sidebar">
+        <div className="logo-container">
+          <h1>🛒</h1>
+        </div>
+        <Category />
+        <Price />
+        <Colors />
+      </section>
     </>
   );
 };
