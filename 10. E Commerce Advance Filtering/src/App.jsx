@@ -7,36 +7,41 @@ import SideBar from "./SideBar/Sidebar";
 //Database
 import products from "./db/data";
 import Card from "./components/Card";
+import "./App.css";
 
-const App = () => {
+function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);
+
+  // ----------- Input Filter -----------
   const [query, setQuery] = useState("");
 
-  // input filter
-  const handleInputChange = (event) => setQuery(event.target.value);
+  const handleInputChange = (event) => {
+    setQuery(event.target.value);
+  };
 
   const filteredItems = products.filter(
-    (product) =>
-      product.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) !==
-      -1
+    (product) => product.title.toLowerCase().indexOf(query.toLowerCase()) !== -1
   );
 
-  //============ Radio Filter ================
-  const handleChange = (event) => setSelectedCategory(event.target.value);
+  // ----------- Radio Filtering -----------
+  const handleChange = (event) => {
+    setSelectedCategory(event.target.value);
+  };
 
-  //=============== Button Filter =========================
-
-  const handleClick = (event) => setSelectedCategory(event.target.value);
+  // ------------ Button Filtering -----------
+  const handleClick = (event) => {
+    setSelectedCategory(event.target.value);
+  };
 
   function filteredData(products, selected, query) {
     let filteredProducts = products;
 
-    // filtering input items
+    // Filtering Input Items
     if (query) {
       filteredProducts = filteredItems;
     }
 
-    // selected filter
+    // Applying selected filter
     if (selected) {
       filteredProducts = filteredProducts.filter(
         ({ category, color, company, newPrice, title }) =>
@@ -73,6 +78,6 @@ const App = () => {
       <Products result={result} />
     </>
   );
-};
+}
 
 export default App;
